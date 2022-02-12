@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ShakeForFood</string>
+    <string name="calories_per_serving">calories per serving</string>
+    <string name="carbs">carbs</string>
+    <string name="protein">protein</string>
+    <string name="fat">fat</string>
+    <string name="fiber">Fiber</string>
+    <string name="unSaturatedFat">unSaturated Fat</string>
+    <string name="potassium">potassium</string>
+    <string name="calories">calories</string>
+    <string name="gramsPerServing">Grams Per Serving</string>
+    <string name="sodium">sodium</string>
+    <string name="saturatedFat">Saturated Fat</string>
+    <string name="cholesterol">cholesterol</string>
+    <string name="sugar">sugar</string>
+    <string name="more_info">More Info</string>
+    <string name="nutrition_info">Nutrition Info</string>
 </resources>
