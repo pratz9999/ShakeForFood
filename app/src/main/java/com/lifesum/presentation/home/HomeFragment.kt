@@ -64,11 +64,14 @@ class HomeFragment : Fragment(), SensorEventListener, View.OnClickListener {
                 when {
                     it.isLoading -> {
                         binding.progressBar.isVisible = true
+                        enableClick(false)
                     }
                     it.error.isNotBlank() -> {
                         binding.progressBar.isVisible = false
+                        enableClick(false)
                     }
                     it.item != null -> {
+                        enableClick(true)
                         binding.progressBar.isVisible = false
                         binding.tvFoodName.text = it.item.title
                         binding.tvCalories.text = it.item.calories.toString()
@@ -126,6 +129,13 @@ class HomeFragment : Fragment(), SensorEventListener, View.OnClickListener {
                 showNutritionBottomSheet()
             }
         }
+    }
+
+    /**
+     * Enabling/Disabling click in based on value
+     */
+    private fun enableClick(value: Boolean){
+        binding.btnMore.isClickable = value
     }
 
     /**
