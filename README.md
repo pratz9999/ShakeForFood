@@ -3,11 +3,12 @@
 > It is written in Kotlin with Clean, MVVM Architecture.
 
 ## Results
-- [ ] Splashscreen using latest Splash API(No more need of extra Activity)
-- [ ] Documentation
-- [ ] Responsive and support Device rotation
-- [ ] Responsive Icons
-- [ ] Implemented Unit/Instrumentation test to ensure that app behave as expected
+- [x] Splashscreen using latest Splash API(No more need of extra Activity)
+- [x] Documentation
+- [x] Responsive and support Device rotation
+- [x] Shake to change food Item
+- [x] Bottom sheet for Nutritional facts
+- [x] Implemented Unit/Instrumentation test to ensure that app behave as expected
 
 ##  Preview
 
