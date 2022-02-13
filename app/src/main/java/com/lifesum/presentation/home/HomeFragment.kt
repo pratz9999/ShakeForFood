@@ -58,6 +58,9 @@ class HomeFragment : Fragment(), SensorEventListener, View.OnClickListener {
         initSensor()
     }
 
+    /**
+     * observing data after making an API call.
+     */
     private fun initObserver() {
         lifecycle.coroutineScope.launchWhenCreated {
             viewModel.state.collect {
@@ -74,7 +77,7 @@ class HomeFragment : Fragment(), SensorEventListener, View.OnClickListener {
                         enableClick(true)
                         binding.progressBar.isVisible = false
                         binding.tvFoodName.text = it.item.title
-                        binding.tvCalories.text = it.item.calories.toString()
+                        binding.tvCalories.text = it.item.calories
                         binding.food = it.item
                     }
                 }
@@ -82,6 +85,9 @@ class HomeFragment : Fragment(), SensorEventListener, View.OnClickListener {
         }
     }
 
+    /**
+     * Initialize sensor for getting the shake feature
+     */
     private fun initSensor() {
         sensorManager = requireActivity().getSystemService(Context.SENSOR_SERVICE) as SensorManager
         Objects.requireNonNull(sensorManager).registerListener(
@@ -102,13 +108,20 @@ class HomeFragment : Fragment(), SensorEventListener, View.OnClickListener {
         val delta: Float = currentAcceleration - lastAcceleration
         acceleration = acceleration * 0.9f + delta
         if (acceleration > 12) {
+            //When the shake is detected
             viewModel.startShake()
         }
     }
 
+    /**
+     * Not useful as per the requirement.
+     */
     override fun onAccuracyChanged(sensor: Sensor?, p1: Int) {
     }
 
+    /**
+     * Registering the sensor
+     */
     override fun onResume() {
         sensorManager.registerListener(
             this, sensorManager.getDefaultSensor(
@@ -118,6 +131,9 @@ class HomeFragment : Fragment(), SensorEventListener, View.OnClickListener {
         super.onResume()
     }
 
+    /**
+     * unregister the sensor listener when the state is in pause.
+     */
     override fun onPause() {
         sensorManager.unregisterListener(this)
         super.onPause()

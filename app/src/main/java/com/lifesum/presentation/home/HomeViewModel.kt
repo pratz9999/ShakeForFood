@@ -50,6 +50,9 @@ class HomeViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
+    /**
+     * When the shake starts, it detects the current state, if it's loading do nothing else get a random number and make an API call.
+     */
     fun startShake() {
         if (!state.value.isLoading) {
             _foodId.value = AppUtility.getRandomNumber()
