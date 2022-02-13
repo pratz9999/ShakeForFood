@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ShakeForFood</string>
+    <string name="app_name">Shake For Food</string>
     <string name="calories_per_serving">calories per serving</string>
     <string name="carbs">carbs</string>
     <string name="protein">protein</string>
@@ -14,5 +14,6 @@
     <string name="cholesterol">cholesterol</string>
     <string name="sugar">sugar</string>
     <string name="more_info">More Info</string>
-    <string name="nutrition_info">Nutrition Info</string>
+    <string name="nutrition_info">Nutritional Facts</string>
+    <string name="amount_per_serving">Amount per Serving</string>
 </resources>
