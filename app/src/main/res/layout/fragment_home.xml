@@ -12,7 +12,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_food"
@@ -27,6 +28,8 @@
             <TextView
                 android:id="@+id/tv_food_name"
                 android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textAllCaps="true"
@@ -94,19 +97,19 @@
                 android:id="@+id/inc_carbs"
                 layout="@layout/home_item"
                 app:name="@{@string/carbs}"
-                app:value="@{food.carbs + ` %`}" />
+                app:value="@{food.carbs + `%`}" />
 
             <include
                 android:id="@+id/inc_protein"
                 layout="@layout/home_item"
                 app:name="@{@string/protein}"
-                app:value="@{food.protein + ` %`}" />
+                app:value="@{food.protein + `%`}" />
 
             <include
                 android:id="@+id/inc_fat"
                 layout="@layout/home_item"
                 app:name="@{@string/fat}"
-                app:value="@{food.fat  + ` %`}" />
+                app:value="@{food.fat  + `%`}" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
