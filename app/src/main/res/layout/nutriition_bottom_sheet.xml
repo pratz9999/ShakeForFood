@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tool="http://schemas.android.com/tools"
     app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
 
     <data>
@@ -15,16 +14,19 @@
         android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:behavior_hideable="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="10dp">
 
             <LinearLayout
                 android:id="@+id/ll_nutrition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_nutritional_fact"
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -33,23 +35,39 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:drawableStart="@drawable/outline_menu_book_24"
-                    android:drawablePadding="10dp"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/nutrition_info"
-                    android:textSize="20sp" />
+                    android:textColor="@color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/black" />
+
+                <include
+                    android:id="@+id/inc_grams"
+                    layout="@layout/nutrition_item"
+                    app:name="@{@string/gramsPerServing}"
+                    app:value="@{food.gramsPerServing}" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@color/black" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:padding="5dp"
-                    android:text="@{food.title +` is a `+ food.pcsText}"
+                    android:text="@string/amount_per_serving"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    tool:text="I am a cheese" />
+                    android:textStyle="bold" />
 
                 <include
                     android:id="@+id/inc_calories"
@@ -58,54 +76,48 @@
                     app:value="@{food.calories}" />
 
                 <include
-                    android:id="@+id/inc_grams"
-                    layout="@layout/nutrition_item"
-                    app:name="@{@string/gramsPerServing}"
-                    app:value="@{food.gramsPerServing}" />
-
-                <include
                     android:id="@+id/inc_saturated_fat"
                     layout="@layout/nutrition_item"
                     app:name="@{@string/saturatedFat}"
-                    app:value="@{food.saturatedFat  + `g`}" />
+                    app:value="@{food.saturatedFat  + `%`}" />
 
                 <include
                     android:id="@+id/inc_unsaturated_fat"
                     layout="@layout/nutrition_item"
                     app:name="@{@string/unSaturatedFat}"
-                    app:value="@{food.unSaturatedFat + `g`}" />
+                    app:value="@{food.unSaturatedFat + `%`}" />
 
                 <include
                     android:id="@+id/inc_fiber"
                     layout="@layout/nutrition_item"
                     app:name="@{@string/fiber}"
-                    app:value="@{food.fiber + `g`}" />
+                    app:value="@{food.fiber + `%`}" />
 
 
                 <include
                     android:id="@+id/inc_potassium"
                     layout="@layout/nutrition_item"
                     app:name="@{@string/potassium}"
-                    app:value="@{food.potassium  + `g`}" />
+                    app:value="@{food.potassium  + `%`}" />
 
                 <include
                     android:id="@+id/inc_sodium"
                     layout="@layout/nutrition_item"
                     app:name="@{@string/sodium}"
-                    app:value="@{food.sodium  + `g`}" />
+                    app:value="@{food.sodium  + `%`}" />
 
 
                 <include
                     android:id="@+id/inc_cholesterol"
                     layout="@layout/nutrition_item"
                     app:name="@{@string/cholesterol}"
-                    app:value="@{food.cholesterol  + `g`}" />
+                    app:value="@{food.cholesterol  + `%`}" />
 
                 <include
                     android:id="@+id/inc_sugar"
                     layout="@layout/nutrition_item"
                     app:name="@{@string/sugar}"
-                    app:value="@{food.sugar  + `g`}" />
+                    app:value="@{food.sugar  + `%`}" />
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
