@@ -25,14 +25,15 @@
             android:gravity="center"
             android:text="@{name}"
             android:textColor="@color/grey"
+            android:textAllCaps="true"
             android:textSize="16sp"
             tool:text="PROTEIN" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:background="@color/grey" />
 
         <TextView
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="center"
+            android:textAllCaps="true"
             android:text="@{value}"
             android:textColor="@color/grey"
             android:textSize="16sp"
