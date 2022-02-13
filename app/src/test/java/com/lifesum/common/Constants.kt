@@ -60,9 +60,5 @@ object Constants {
 
     val foodItemOne = foodOne.toFoodItem()
 
-    private val foodItemTwo = foodTwo.toFoodItem()
-
-    private val foodItemThree = foodThree.toFoodItem()
-
     val foodResponse = FoodResponse(meta = Meta(200), foodOne)
 }
